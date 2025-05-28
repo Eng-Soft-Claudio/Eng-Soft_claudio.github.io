@@ -2,16 +2,20 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfólio de Cláudio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&family=Fira+Code&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #007acc;
-      --bg-color: #f9f9f9;
-      --text-color: #333;
-      --card-bg: #ffffff;
-      --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      --border-radius: 12px;
+      --blue-dark: #306998;
+      --blue-light: #4b8bbe;
+      --yellow: #ffd43b;
+      --bg-light: #f5f5f5;
+      --text: #222;
+      --terminal-bg: #2d2d2d;
+      --terminal-text: #f8f8f2;
+      --terminal-comment: #75715e;
+      --terminal-keyword: #66d9ef;
     }
 
     * {
@@ -21,95 +25,124 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      padding: 2rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text);
       line-height: 1.6;
+      padding: 2rem;
     }
 
     header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 2rem;
     }
 
     h1 {
-      color: var(--primary-color);
-      font-size: 2.5rem;
+      color: var(--blue-dark);
+      font-size: 2.2rem;
     }
 
-    p {
-      max-width: 800px;
-      margin: 1rem 0;
+    nav {
+      display: flex;
+      gap: 1rem;
     }
+
+    .btn {
+      background: var(--blue-light);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--blue-dark);
+    }
+
+    .terminal {
+      background: var(--terminal-bg);
+      color: var(--terminal-text);
+      font-family: 'Fira Code', monospace;
+      padding: 1.5rem;
+      border-radius: 8px;
+      white-space: pre-line;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .comment { color: var(--terminal-comment); }
+    .keyword { color: var(--terminal-keyword); }
 
     .projects {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       margin-top: 2rem;
     }
 
-    .project-card {
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      padding: 1.5rem;
-      transition: transform 0.2s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
+    .project {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1rem;
     }
 
     .project-title {
-      color: var(--primary-color);
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+      color: var(--blue-dark);
+      font-weight: 600;
+      font-size: 1.1rem;
     }
 
-    .project-description {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    .project-link {
-      display: inline-block;
-      margin-top: 0.8rem;
-      color: var(--primary-color);
+    .project a {
+      color: var(--blue-light);
       text-decoration: none;
       font-weight: 500;
     }
 
     footer {
-      margin-top: 4rem;
+      margin-top: 3rem;
       text-align: center;
-      font-size: 0.85rem;
-      color: #888;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Olá, sou Cláudio!</h1>
-    <p>Sou um desenvolvedor Backend especializado em <strong>Python</strong>, com foco em construir APIs robustas, performáticas e seguras com <strong>FastAPI</strong>.</p>
-    <p>Trabalho com arquitetura limpa, testes automatizados, CI/CD e boas práticas de desenvolvimento. Abaixo estão alguns dos meus projetos públicos.</p>
+    <h1>Cláudio</h1>
+    <nav>
+      <a class="btn" href="https://www.linkedin.com/in/seu-perfil" target="_blank">LinkedIn</a>
+      <a class="btn" href="https://www.instagram.com/seu-perfil" target="_blank">Instagram</a>
+      <a class="btn" href="https://wa.me/55seunumerocomddd" target="_blank">WhatsApp</a>
+    </nav>
   </header>
 
-  <section class="projects">
-    <div class="project-card">
-      <div class="project-title">CRUD Template</div>
-      <div class="project-description">
-        Um template completo para APIs de cadastro de usuários utilizando FastAPI, SQLAlchemy, PostgreSQL e autenticação JWT.
-      </div>
-      <a class="project-link" href="https://github.com/Eng-Soft-Claudio/CRUD-Template" target="_blank">Ver no GitHub →</a>
-    </div>
+  <section class="terminal">
+<span class="comment"># Sobre mim</span>
+<span class="keyword">class</span> Claudio(BackendDeveloper):
+    <span class="keyword">def</span> __init__(self):
+        self.stack = ['Python', 'FastAPI']
+        self.focus = 'APIs robustas, performáticas e seguras'
+        self.practices = ['arquitetura limpa', 'testes automatizados', 'CI/CD', 'boas práticas']
 
-    <!-- Adicione mais projetos aqui conforme necessário -->
+    <span class="keyword">def</span> projetos_publicos(self):
+        <span class="keyword">return</span> ['CRUD Template', 'Mais projetos em breve...']
+  </section>
+
+  <section class="projects">
+    <div class="project">
+      <div class="project-title">CRUD Template</div>
+      <p>Template completo para APIs REST com FastAPI, SQLAlchemy, PostgreSQL e autenticação JWT.</p>
+      <a href="https://github.com/Eng-Soft-Claudio/CRUD-Template" target="_blank">Ver projeto no GitHub →</a>
+    </div>
   </section>
 
   <footer>
-    © 2025 Cláudio • Desenvolvedor Backend
+    © 2025 Cláudio • Desenvolvedor Backend Python
   </footer>
+
 </body>
 </html>
