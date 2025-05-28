@@ -385,8 +385,8 @@
           div.className = 'project';
           div.innerHTML = `
             <div class="project-title">${repo.name}</div>
-            <p>${repo.description || 'Sem descrição.'}</p>
-            <a href="${repo.html_url}" target="_blank">Ver projeto no GitHub →</a>
+            <p>${repo.description || 'Projetos em andamento...'}</p>
+            <a href="${repo.html_url}" target="_blank">Ver no GitHub →</a>
           `;
           container.appendChild(div);
         });
