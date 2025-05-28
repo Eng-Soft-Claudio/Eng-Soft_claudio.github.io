@@ -18,8 +18,9 @@
       --terminal-text: #f8f8f2;
       --terminal-comment: #75715e;
       --terminal-keyword: #66d9ef;
-      --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      --radius: 8px;
+      --terminal-string: #ffd43b;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      --radius: 10px;
     }
 
     * {
@@ -51,26 +52,27 @@
 
     h1 {
       color: var(--blue-dark);
-      font-size: 2.2rem;
+      font-size: 2.5rem;
     }
 
     nav {
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
     }
 
     .btn {
       background: var(--blue-light);
       color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
+      padding: 0.5rem 1.2rem;
+      border-radius: var(--radius);
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
     }
 
     .btn:hover {
-      background: var(--blue-dark);
+      background: var(--yellow);
+      color: var(--text-light);
     }
 
     .terminal {
@@ -96,19 +98,20 @@
 
     .comment { color: var(--terminal-comment); }
     .keyword { color: var(--terminal-keyword); }
+    .string { color: var(--terminal-string); }
 
     .projects {
       margin-top: 2rem;
       display: grid;
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
     .project {
       background: white;
-      padding: 1rem;
+      padding: 1rem 1.5rem;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      transition: transform 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     body.dark .project {
@@ -116,13 +119,15 @@
     }
 
     .project:hover {
-      transform: scale(1.02);
+      transform: translateY(-5px);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
     }
 
     .project-title {
       color: var(--blue-dark);
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
     }
 
     .project a {
@@ -135,15 +140,22 @@
       margin-top: 3rem;
       text-align: center;
       font-size: 0.9rem;
-      color: #777;
+      color: #999;
     }
 
     .toggle-darkmode {
       cursor: pointer;
       font-size: 0.9rem;
       background: none;
-      border: none;
-      color: var(--blue-dark);
+      border: 2px solid var(--blue-light);
+      border-radius: var(--radius);
+      color: var(--blue-light);
+      padding: 0.3rem 0.8rem;
+    }
+
+    .toggle-darkmode:hover {
+      background: var(--blue-light);
+      color: white;
     }
   </style>
 </head>
@@ -162,12 +174,12 @@
 <span class="comment"># Sobre mim</span>
 <span class="keyword">class</span> Claudio(BackendDeveloper):
     <span class="keyword">def</span> __init__(self):
-        self.stack = ['Python', 'FastAPI']
-        self.focus = 'APIs robustas, performáticas e seguras'
-        self.practices = ['arquitetura limpa', 'testes automatizados', 'CI/CD', 'boas práticas']
+        self.stack = <span class="string">['Python', 'FastAPI']</span>
+        self.focus = <span class="string">'APIs robustas, performáticas e seguras'</span>
+        self.practices = <span class="string">['arquitetura limpa', 'testes automatizados', 'CI/CD', 'boas práticas']</span>
 
     <span class="keyword">def</span> projetos_publicos(self):
-        <span class="keyword">return</span> ['CRUD Template', 'Mais projetos em breve...']
+        <span class="keyword">return</span> <span class="string">['CRUD Template', 'Mais projetos em breve...']</span>
   </section>
 
   <section class="projects" id="repos"></section>
