@@ -1,20 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio de Cláudio</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; }
-    h1 { color: #007acc; }
+    :root {
+      --primary-color: #007acc;
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --card-bg: #ffffff;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      --border-radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 1rem 0;
+    }
+
+    .projects {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      transition: transform 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .project-title {
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-description {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 0.8rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+    }
   </style>
 </head>
 <body>
-  <h1>Olá, sou Cláudio!</h1>
-  <p>Desenvolvedor Backend especializado em Python e suas bibliotecas. Meu foco é a construção de soluções robustas e seguras utilizando, principalmente, FastAPI.</p>
-  <p>Aqui está meu principal projeto, um template de CRUD de usuários:</p>
-  <ul>
-    <li><a href="https://github.com/Eng-Soft-Claudio/CRUD-Template">CRUD Template</a></li>
-  </ul>
+  <header>
+    <h1>Olá, sou Cláudio!</h1>
+    <p>Sou um desenvolvedor Backend especializado em <strong>Python</strong>, com foco em construir APIs robustas, performáticas e seguras com <strong>FastAPI</strong>.</p>
+    <p>Trabalho com arquitetura limpa, testes automatizados, CI/CD e boas práticas de desenvolvimento. Abaixo estão alguns dos meus projetos públicos.</p>
+  </header>
+
+  <section class="projects">
+    <div class="project-card">
+      <div class="project-title">CRUD Template</div>
+      <div class="project-description">
+        Um template completo para APIs de cadastro de usuários utilizando FastAPI, SQLAlchemy, PostgreSQL e autenticação JWT.
+      </div>
+      <a class="project-link" href="https://github.com/Eng-Soft-Claudio/CRUD-Template" target="_blank">Ver no GitHub →</a>
+    </div>
+
+    <!-- Adicione mais projetos aqui conforme necessário -->
+  </section>
+
+  <footer>
+    © 2025 Cláudio • Desenvolvedor Backend
+  </footer>
 </body>
 </html>
