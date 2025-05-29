@@ -529,7 +529,7 @@
         <span class="comment"># Sobre mim</span><br />
         <span class="keyword">class</span> BackendDeveloper:<br />
         &nbsp;&nbsp;<span class="keyword">def</span> __init__(self):<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="docstring">"""Iniciais as informações do desenvolvedor."""</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="docstring">"""Informações do desenvolvedor."""</span><br />
         &nbsp;&nbsp;&nbsp;&nbsp;self.name = <span class="string">'Cláudio de Lima Tosta'</span><br />
         &nbsp;&nbsp;&nbsp;&nbsp;self.age = <span class="number">47</span><br />
         &nbsp;&nbsp;&nbsp;&nbsp;self.location = <span class="string">'Brasil'</span><br />
@@ -622,7 +622,7 @@
         }
         
         publicRepos.sort((a, b) => a.name.localeCompare(b.name));
-        
+
         if (publicRepos.length === 0) {
           container.innerHTML = '<p class="message-feedback info">Nenhum projeto público encontrado no momento.</p>';
           return;
