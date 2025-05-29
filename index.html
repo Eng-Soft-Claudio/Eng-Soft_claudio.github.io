@@ -605,6 +605,12 @@
       'MedicalSystemOrganizer'
     ];
 
+    const customProjectDescriptions = {
+      'CrudTemplate': 'Um template robusto e flexível para acelerar o desenvolvimento de operações CRUD (Create, Read, Update, Delete) em aplicações, incluindo autenticação e estrutura de projeto organizada.',
+      'SmartTask': 'Aplicativo inteligente de gerenciamento de tarefas para ajudar a organizar suas atividades diárias com eficiência e recursos avançados.',
+      'MedicalSystemOrganizer': 'Sistema para organização de prontuários e agendamentos médicos, desenvolvido com foco na segurança e usabilidade para profissionais da saúde.'
+    };
+
     async function loadRepos() {
       const container = document.getElementById('repos');
       if (!container) return;
@@ -632,6 +638,7 @@
 
 
         publicRepos.forEach((repo, index) => {
+          const description = customProjectDescriptions[repo.name] || repo.description || 'Este projeto ainda não possui uma descrição detalhada.';
           const div = document.createElement('div');
           div.className = 'project';
           div.tabIndex = 0;
@@ -642,7 +649,7 @@
 
           div.innerHTML = `
             <h3 class="project-title">${repo.name}</h3>
-            <p>${repo.description || 'Este projeto ainda não possui uma descrição detalhada.'}</p>
+            <p>${description}</p>
             <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" aria-label="Ver o projeto ${repo.name} no GitHub">
               Ver no GitHub &rarr;
             </a>
