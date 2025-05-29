@@ -21,10 +21,12 @@
       --text-light: #222;
       --text-dark: #e0e0e0;
       --terminal-bg: #1e1e1e;
-      --terminal-text: #f8f8f2;
-      --terminal-comment: #6a9955;
-      --terminal-keyword: #569cd6;
-      --terminal-string: #dcdcaa;
+      --terminal-text: #0e68bd;
+      --terminal-comment: #43b60e;
+      --terminal-number: #6615a8;
+      --terminal-keyword: #ec413b;
+      --terminal-string: #ecec8a;
+      --terminal-docstring: #b8741c;
       --shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
       --radius: 10px;
     }
@@ -220,8 +222,17 @@
       color: var(--terminal-keyword);
     }
 
+    .docstring {
+      color: var(--terminal-docstring);
+      font-style: italic;
+    }
+
     .string {
       color: var(--terminal-string);
+    }
+
+    .number {
+      color: var(--terminal-number);
     }
 
     /* Projects container */
@@ -324,7 +335,7 @@
 
 <body>
   <header>
-    <h1>Cláudio</h1>
+    <h1>Cláudio de Lima Tosta</h1>
     <nav>
       <a class="btn-linkedin" href="https://www.linkedin.com/in/claudiodelimatosta/" target="_blank">LinkedIn</a>
       <a class="btn-instagram" href="https://www.instagram.com/claudiolimatosta/" target="_blank">Instagram</a>
@@ -339,15 +350,24 @@
     <div class="profile-pic"></div>
     <div class="terminal">
       <span class="comment"># Sobre mim</span>
-      <span class="keyword">class</span> Claudio(BackendDeveloper):
+      <span class="keyword">class</span> BackendDeveloper:
       <span class="keyword">def</span> __init__(self):
-      self.stack = <span class="string">['Python', 'FastAPI']</span>
-      self.focus = <span class="string">'APIs robustas, performáticas e seguras'</span>
-      self.practices = <span class="string">['arquitetura limpa', 'testes automatizados', 'CI/CD', 'boas
-        práticas']</span>
-
+      <span class="docstring">"""Iniciais as informações do desenvolvedor."""</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;self.name = <span class="string">'Cláudio de Lima Tosta'</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;self.age = <span class="number">47</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;self.location = <span class="string">'Brasil'</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;self.yearsExperience = <span class="number">4</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;self.skills = <span class="string">['Python', 'FastAPI', 'Docker', 'PostgreSQL',
+        'MongoDB', 'Linux']</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;self.education = <span class="string">'Engenharia de Software'</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;self.certifications = <span class="string">'Certificação em Python Avançado'</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;self.languages = <span class="string">['Português', 'Inglês']</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;self.focus = <span class="string">'APIs robustas, performáticas e seguras'</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;self.practices = <span class="string">['arquitetura limpa', 'testes automatizados',
+        'CI/CD', 'boas práticas']</span>
       <span class="keyword">def</span> projetos_publicos(self):
-      <span class="keyword">return</span> <span class="string">['CRUD Template', 'Mais projetos em breve...']</span>
+      <span class="keyword">&nbsp;&nbsp;&nbsp;&nbsp;return</span> <span class="string">['CRUD Template', 'Medical System
+        Organizer', 'Smart Task', 'Mais projetos em breve...']</span>
     </div>
   </section>
 
